@@ -2,14 +2,17 @@
 from __future__ import unicode_literals
 
 import re
+
 import requests
+
+from requests.adapters import HTTPAdapter
+from requests.utils import requote_uri
+
+from urllib3.util.retry import Retry
 
 from pyglotz import endpoints
 from pyglotz.exceptions import (ActorNotFound, BadRequest, BannersNotFound, ConnectionError, EpisodeNotFound,
                                 IDNotFound, MissingParameters, ShowIndexError, ShowNotFound)
-from requests.adapters import HTTPAdapter
-from requests.utils import requote_uri
-from urllib3.util.retry import Retry
 
 
 class Show(object):
@@ -197,8 +200,7 @@ class Banner(object):
 
 
 class Glotz(object):
-    """
-    This is the main class of the module enabling interaction with the Glotz API
+    """This is the main class of the module enabling interaction with the Glotz API.
 
     Attributes:
         api_key (str): Glotz api key.  Find your key at https://www.glotz.info/profile
@@ -233,8 +235,7 @@ class Glotz(object):
     # Get Show object by tvdb_id
     # TODO extend by additional qualifiers
     def get_show(self, tvdb_id=None, language=None):
-        """
-        Get Show object directly via id
+        """Get Show object directly via id.
 
         Args:
             tvdb_id:    Show tvdb_id
@@ -253,8 +254,7 @@ class Glotz(object):
 
     # Return list of Show objects
     def get_show_list(self, show_name, language=None):
-        """
-        Return list of Show objects from the Glotz "Show Search" endpoint
+        """Return list of Show objects from the Glotz "Show Search" endpoint.
 
         :param show_name: Name of show
         :param language: Language of the show
@@ -290,7 +290,7 @@ class Glotz(object):
         if q and q.get('Data') and q.get('Data').get('Episode') and q.get('Data').get('Episode').get('id') != '0':
             return Episode(q.get('Data').get('Episode'))
         else:
-            raise EpisodeNotFound('Couldn\'t find Episode with ID {0}'.format(episode_id))
+            raise EpisodeNotFound("Couldn't find Episode with ID {0}".format(episode_id))
 
     def lookup_tvdb(self, tvdb_id, language=None):
         if not language:

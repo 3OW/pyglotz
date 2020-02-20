@@ -1,2 +1,1 @@
-requests
--e .
+requests>=2.23.0

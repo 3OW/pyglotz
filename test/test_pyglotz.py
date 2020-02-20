@@ -1,7 +1,7 @@
-import pytest
+from pyglotz.glotz import *
 from time import time
 
-from pyglotz.glotz import *
+import pytest
 
 GLOTZ_API_KEY = '9DAF49C96CBF8DAC'
 
