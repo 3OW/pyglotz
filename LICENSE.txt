@@ -1,7 +1,7 @@
 The MIT License (MIT)
 
-Copyright (c) 2015 Spencer Roberts
-Data obtained via this program comes from www.tvmaze.com
+Copyright (c) 2020 3OW
+Data obtained via this program comes from www.glotz.info
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
