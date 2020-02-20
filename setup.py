@@ -41,7 +41,7 @@ class PyTest(TestCommand):
 
 setup(
     name='pyglotz',
-    version='0.1.1',
+    version='0.1.2',
     description='Python interface to the Glotz API (www.glotz.info)',
     url='https://github.com/3OW/pyglotz',
     author='3OW',
