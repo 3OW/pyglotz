@@ -1,0 +1,11 @@
+*.py[c|o]
+*.egg
+*.egg-info
+/build
+/dist
+.DS_Store
+*.log
+__pycache__/
+venv
+.pytest_cache
+.idea
